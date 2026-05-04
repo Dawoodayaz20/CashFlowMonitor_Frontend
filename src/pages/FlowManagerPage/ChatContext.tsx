@@ -1,10 +1,9 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import useAuthStore from "../../store/useAuthStore";
 import { createSession, fetchSessionMessages, fetchSessions, saveMessage, updateTitle, deleteSession } from "../../fetchRequests/fetchChats";
-import type { Message, Session, ChatContextType, ProviderType } from "./ChatContextTypes";
-
-export const ChatContext = createContext<ChatContextType | undefined>(undefined);
+import type { Message, Session, ProviderType } from "./ChatContextTypes";
+import { ChatContext } from "./ChatContextTypes";
 
 export const ChatContextProvider = ({ children }: ProviderType) => {
   const { user } = useAuthStore();
@@ -113,10 +112,4 @@ export const ChatContextProvider = ({ children }: ProviderType) => {
       {children}
     </ChatContext.Provider>
   );
-};
-
-export const useChat = () => {
-  const context = useContext(ChatContext);
-  if (!context) throw new Error("useChat must be used within ChatContextProvider");
-  return context;
 };

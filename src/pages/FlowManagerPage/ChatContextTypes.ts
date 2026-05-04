@@ -1,3 +1,4 @@
+import { createContext } from "react";
 import type { ReactNode } from "react";
 
 export type Message = {
@@ -34,3 +35,6 @@ export type ChatContextType = {
 export interface ProviderType {
   children: ReactNode;
 }
+
+
+export const ChatContext = createContext<ChatContextType | undefined>(undefined);

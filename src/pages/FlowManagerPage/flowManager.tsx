@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import useAuthStore from "../../store/useAuthStore";
 import { getResponse } from "../../fetchRequests/fetchAgent";
-import type { Message } from "./ChatContext";
-import { useChat } from "./ChatContext";
+import type { Message } from "./ChatContextTypes";
+import { useChat } from "./useChat";
 import { v4 as uuidv4 } from "uuid";
 import { generateTitle } from "../../fetchRequests/fetchAgent";
 

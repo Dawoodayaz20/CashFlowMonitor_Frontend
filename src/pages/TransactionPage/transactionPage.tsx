@@ -113,7 +113,7 @@ const TransactionPage: React.FC<TransactionPageProps> = ({ type }) => {
   useEffect(() => {
     fetchTransactions(type);
     console.log(transactions)
-  }, [type]);
+  }, [type, transactions]);
 
   // ── Date navigation state ──
   const now = new Date();
