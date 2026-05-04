@@ -116,7 +116,7 @@ const useTransactionStore = create<TransactionState>((set, get) => ({
 
 export const clearAllTransactions = async (password: string) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_BackEnd_API_URL}api/transactions/clear-all'`, {
+    const response = await fetch(`${import.meta.env.VITE_BackEnd_API_URL}api/transactions/clear-all`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

@@ -111,9 +111,8 @@ const TransactionPage: React.FC<TransactionPageProps> = ({ type }) => {
 
   // ── Fetch on mount / type change ──
   useEffect(() => {
-    fetchTransactions(type);
-    console.log(transactions)
-  }, [type, transactions]);
+  fetchTransactions(type);
+  }, [type, fetchTransactions]);
 
   // ── Date navigation state ──
   const now = new Date();
