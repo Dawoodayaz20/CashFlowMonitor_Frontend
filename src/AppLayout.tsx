@@ -4,7 +4,7 @@ import { SignOut } from "./authentication/authMethods";
 import AddTransactionModal from "./components/transactionModal/addTransaction";
 import useTransactionStore from "./store/useTransactionStore";
 import useAuthStore from "./store/useAuthStore";
-import { getInitials } from "./pages/ProfilePage/profilePage";
+import { getInitials } from "./pages/ProfilePage/profileUtils";
 import useSettingsStore from "./store/useSettingsStore";
 
 // ─── Types ────────────────────────────────────────────────────────────────────

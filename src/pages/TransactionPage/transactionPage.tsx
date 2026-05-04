@@ -180,7 +180,7 @@ const TransactionPage: React.FC<TransactionPageProps> = ({ type }) => {
 
   // ── Search + sort ──
   const displayed = useMemo(() => {
-    let rows = monthFiltered.filter((tx) => {
+    const rows = monthFiltered.filter((tx) => {
       const q = search.toLowerCase();
       return (
         tx.category.toLowerCase().includes(q) ||

@@ -5,6 +5,7 @@ import { updateProfile } from "../../authentication/authMethods";
 import VerifyAccountModal from "./verifyAccountModal";
 import { deleteAccount } from "../../authentication/authMethods";
 import { useNavigate } from "react-router-dom";
+import { getInitials } from "./profileUtils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -18,20 +19,6 @@ interface PasswordForm {
   next: string;
   confirm: string;
 }
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-export const getInitials = (name: string | undefined | null): string => {
-  if(!name || !name.trim()) return "?"
-    
-  const parts = name.trim().split(" ").filter(Boolean);
-  if (parts.length === 0) return "?";
-
-  const firstInitial = parts[0][0];
-  const lastInitial = parts.length > 1 ? parts[parts.length - 1][0] : "";
-
-  return (firstInitial + lastInitial).toUpperCase();
-};
 
 const formatMemberSince = (date: string | number): string =>
   new Date(date).toLocaleDateString("en-US", { month: "long", year: "numeric" });

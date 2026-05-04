@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { ChatContextProvider } from './pages/FlowManagerPage/ChatContext.tsx';
+import { ChatContextProvider } from './pages/FlowManagerPage/ChatContext';
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(

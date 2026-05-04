@@ -1,43 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import type { ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
 import useAuthStore from "../../store/useAuthStore";
 import { createSession, fetchSessionMessages, fetchSessions, saveMessage, updateTitle, deleteSession } from "../../fetchRequests/fetchChats";
-
-export type Message = {
-  id: string;
-  role: "assistant" | "user";
-  content: string;
-  timestamp: Date;
-};
-
-export type Session = {
-  session_id: string;
-  title: string;
-  createdAt: Date;
-};
-
-type ChatContextType = {
-  // Messages
-  messages: Message[];
-  addMessage: (msg: Message) => void;
-
-  // Input
-  text: string;
-  setText: (value: string) => void;
-
-  // Sessions
-  sessions: Session[];
-  activeSessionId: string | null;
-  createNewSession: () => void;
-  setActiveSession: (session_id: string) => void;
-  updateSessionTitle: (session_id: string, title: string) => void;
-  deleteSessionChat: (session_id: string) => void;
-};
-
-interface ProviderType {
-  children: ReactNode;
-}
+import type { Message, Session, ChatContextType, ProviderType } from "./ChatContextTypes";
 
 export const ChatContext = createContext<ChatContextType | undefined>(undefined);
 
